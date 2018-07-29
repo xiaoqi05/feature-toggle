@@ -8,12 +8,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.TYPE, ElementType.METHOD})
-@Retention(RetentionPolicy.RUNTIME)
+@Target ({ElementType.TYPE, ElementType.METHOD})
+@Retention (RetentionPolicy.RUNTIME)
 @Documented
-@Conditional(FeatureCondition.class)
+@Conditional (FeatureCondition.class)
 public @interface FeatureToggle {
-  String feature();
 
-  boolean expectedToBeOn() default true;
+    String feature();
+
+    boolean beActive() default true;
+
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping ("/foo")
-@FeatureToggle (feature = "feature.foo", expectedToBeOn = true)
+@FeatureToggle (feature = "feature.foo", beActive = false)
 public class FooController {
 
     @GetMapping

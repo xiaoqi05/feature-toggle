@@ -15,9 +15,10 @@ public class FeatureCondition implements Condition {
             Map<String, Object> annotationAttributes = annotatedTypeMetadata
                     .getAnnotationAttributes(FeatureToggle.class.getCanonicalName());
             String feature = (String) annotationAttributes.get("feature");
-            boolean expectedToBeOn = Boolean.parseBoolean(String.valueOf(annotationAttributes.get("expectedToBeOn")));
-            boolean isOn = Boolean.parseBoolean(conditionContext.getEnvironment().getProperty(feature));
-            return expectedToBeOn == isOn;
+            boolean expectedToBeActive = Boolean
+                    .parseBoolean(String.valueOf(annotationAttributes.get("beActive")));
+            boolean isActive = Boolean.parseBoolean(conditionContext.getEnvironment().getProperty(feature));
+            return expectedToBeActive == isActive;
         }
         return true;
     }

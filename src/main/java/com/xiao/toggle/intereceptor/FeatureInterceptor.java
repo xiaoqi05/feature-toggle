@@ -30,28 +30,28 @@ public class FeatureInterceptor implements HandlerInterceptor {
                 return true;
             }
 
-            if (methodAnnotation.expectedToBeOn() == featureRepository.isActive(methodAnnotation.feature())) {
+            if (methodAnnotation.beActive() == featureRepository.isActive(methodAnnotation.feature())) {
                 return true;
             }
 
             httpServletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return false;
         } catch (RuntimeException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return true;
         }
 
     }
 
     @Override
-    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o,
-                           ModelAndView modelAndView) throws Exception {
+    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
+                           Object o, ModelAndView modelAndView) {
 
     }
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
-                                Object o, Exception e) throws Exception {
+                                Object o, Exception e) {
 
     }
 }

@@ -50,6 +50,7 @@ public class FeatureRepository {
     }
 
     public Map<String, Boolean> allFeatures() {
-        return featureKeys().stream().collect(Collectors.toMap(k -> k, k -> Boolean.parseBoolean(env.getProperty(k))));
+        return featureKeys().stream()
+                .collect(Collectors.toMap(k -> k, k -> Boolean.parseBoolean(env.getProperty(k))));
     }
 }
