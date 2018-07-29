@@ -1,3 +1,3 @@
 # feature toggle 
 - aop
-- dynamic config from spring cloud config
+- dynamic config use spring cloud config
