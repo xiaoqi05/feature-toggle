@@ -12,8 +12,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping ("/features")
+@RequestMapping("/features")
 public class FeatureController {
+
 
     private final FeatureRepository featureRepository;
 
@@ -27,12 +28,19 @@ public class FeatureController {
         return featureRepository.allFeatures()
                 .entrySet()
                 .stream()
+
                 .map(entry -> new HashMap<String, Object>() {
                     {
                         put("key", entry.getKey());
                         put("active", entry.getValue());
                     }
                 })
+
+
+
+                .filter(it -> it.containsKey("xx"))
+
+
                 .collect(Collectors.toList());
     }
 }
