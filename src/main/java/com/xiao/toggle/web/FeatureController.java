@@ -25,6 +25,7 @@ public class FeatureController {
 
     @GetMapping
     public List<Map> features() {
+        System.out.println("xx");
         return featureRepository.allFeatures()
                 .entrySet()
                 .stream()
@@ -35,7 +36,6 @@ public class FeatureController {
                         put("active", entry.getValue());
                     }
                 })
-
 
 
                 .filter(it -> it.containsKey("xx"))
