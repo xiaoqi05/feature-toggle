@@ -26,7 +26,6 @@ public class FeatureController {
     @GetMapping
     public List<Map> features() {
         System.out.println("xx");
-
         return featureRepository.allFeatures()
                 .entrySet()
                 .stream()
