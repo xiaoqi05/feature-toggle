@@ -37,7 +37,6 @@ public class FeatureController {
                     }
                 })
                 .filter(it -> it.containsKey("xx"))
-
                 .collect(Collectors.toList());
     }
 }
