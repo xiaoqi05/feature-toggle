@@ -36,10 +36,7 @@ public class FeatureController {
                         put("active", entry.getValue());
                     }
                 })
-
-
                 .filter(it -> it.containsKey("xx"))
-
 
                 .collect(Collectors.toList());
     }
